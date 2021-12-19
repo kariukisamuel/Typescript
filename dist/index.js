@@ -71,6 +71,41 @@ const father = {
 };
 console.log(mother);
 console.log(father);
+const add = (x, y) => {
+    return x + y;
+};
+const subtract = (x, y) => {
+    return x - y;
+};
+console.log(add(1000, 1000));
+console.log(subtract(1000, 500));
+class Car {
+    constructor(model, regNo) {
+        this.model = model;
+        this.regNo = regNo;
+    }
+    register() {
+        return `this ${this.model} is registered as ${this.regNo}`;
+    }
+}
+//subclass
+class Mileage extends Car {
+    constructor(model, regNo, mileage) {
+        super(model, regNo);
+        this.mileage = mileage;
+    }
+}
+const tesla = new Car('Tesla', 123);
+const mileage = new Mileage('Tesla', 123, 1000);
+console.log(mileage);
+//generics
+function generateArr(items) {
+    return new Array().concat(items);
+}
+let numArrays = generateArr([1, 2, 3, 4, 5, 6]);
+let stringArrays = generateArr(['1', '2', '3', '4', '5', '6']);
+console.log(numArrays);
+console.log(stringArrays);
 // console.log(printMessage('string'))
 // console.log(printMessage(1))
 // // console.log(id)
